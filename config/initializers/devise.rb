@@ -247,11 +247,11 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :facebook, '658594684315966', 'bf467e10f38ca07b9da838e1043cf2aa', {
+  config.omniauth :facebook, ENV['facebook_api_key'], ENV['facebook_api_secret'], {
     scope: 'email',
     image_size: 'square',
     info_fields: 'name,email',
-    callback_url: Rails.env.development? ? 'http://localhost:3000/users/auth/facebook/callback' : 'http://lazydm.com/users/auth/facebook/callback'
+    callback_url: ENV['facebook_callback_url']
     #callback_url: '/users/auth/facebook/callback'
   }
 
@@ -260,7 +260,7 @@ Devise.setup do |config|
     image_aspect_ratio: 'square',
     image_size: 50,
     prompt: 'select_account',
-    callback_url: Rails.env.development? ? 'http://localhost:3000/users/auth/google/callback' : 'http://lazydm.com/users/auth/google/callback'
+    callback_url: ENV['google_callback_url']
     #callback_url: '/users/auth/google/callback'
   }
 
