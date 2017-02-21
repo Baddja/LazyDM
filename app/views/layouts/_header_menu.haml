@@ -16,12 +16,12 @@
       %ul.nav.navbar-nav.navbar-right
         - if @user_signed_in
           %li
-            = button_tag 'Sign Out', type: 'button', id: 'user-sign-out-btn' class: 'btn btn-default navbar-btn'
+            = button_tag 'Sign Out', type: 'button', id: 'user-sign-out-btn', class: 'btn btn-default navbar-btn'
         - else
           %li
-            = link_to 'Sign In', new_user_session_path, class: 'btn btn-default navbar-btn'
+            = button_tag 'Sign In', type: 'button', id: 'user-sign-in-btn', class: 'btn btn-default navbar-btn'
           %li
             %p.navbar-text
               or
           %li
-            = link_to 'Register', new_user_registration_path, class: 'btn btn-default navbar-btn'
+            = button_tag 'Register', type: 'button', class: 'btn btn-default navbar-btn'

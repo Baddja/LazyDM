@@ -39,7 +39,7 @@ gem 'devise'
 gem 'devise_uid'
 
 # Omniauth strategies
-gem 'omniauth-google'
+gem 'omniauth-google-oauth2', '~> 0.4.1'
 gem 'omniauth-facebook'
 
 group :development, :test do
