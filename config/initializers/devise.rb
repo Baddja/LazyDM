@@ -251,14 +251,17 @@ Devise.setup do |config|
     scope: 'email',
     image_size: 'square',
     info_fields: 'name,email',
-    callback_url: Rails.env.test? ? 'http://localhost:3000/users/auth/facebook' : 'http://lazydm.com/users/auth/facebook'
+    callback_url: Rails.env.development? ? 'http://localhost:3000/users/auth/facebook/callback' : 'http://lazydm.com/users/auth/facebook/callback'
+    #callback_url: '/users/auth/facebook/callback'
   }
 
   config.omniauth :google_oauth2, "APP_ID", "APP_SECRET", {
     name: 'google',
     image_aspect_ratio: 'square',
     image_size: 50,
-    prompt: 'select_account'
+    prompt: 'select_account',
+    callback_url: Rails.env.development? ? 'http://localhost:3000/users/auth/google/callback' : 'http://lazydm.com/users/auth/google/callback'
+    #callback_url: '/users/auth/google/callback'
   }
 
   # ==> Warden configuration
