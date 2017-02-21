@@ -18,7 +18,7 @@ gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Bootstrap
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -31,12 +31,16 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
-# Haml tamplating
+# Haml templating
 gem 'haml'
 
 # Devise for authable models
 gem 'devise'
 gem 'devise_uid'
+
+# Omniauth strategies
+gem 'omniauth-google'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'pry-rails'

@@ -1,4 +1,27 @@
 %nav.navbar.navbar-default.navbar-fixed-top
-  .container-fluid
+  .container
     .navbar-header
       %button.navbar-toggle.collapsed{ type: 'button', 'data-toggle': 'collapse', 'data-target': '#header-menu-collapse', 'aria-expanded': 'false'}
+        %span.sr-only
+          Toggle Navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to 'Home', root_path, class: 'navbar-brand'
+
+    #header-menu-collapse.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          = link_to 'LINK', '#'
+      %ul.nav.navbar-nav.navbar-right
+        - if @user_signed_in
+          %li
+            = button_tag 'Sign Out', type: 'button', id: 'user-sign-out-btn' class: 'btn btn-default navbar-btn'
+        - else
+          %li
+            = link_to 'Sign In', new_user_session_path, class: 'btn btn-default navbar-btn'
+          %li
+            %p.navbar-text
+              or
+          %li
+            = link_to 'Register', new_user_registration_path, class: 'btn btn-default navbar-btn'
