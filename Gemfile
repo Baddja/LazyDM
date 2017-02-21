@@ -33,6 +33,7 @@ gem 'haml'
 
 # Devise for authable models
 gem 'devise'
+gem 'devise_uid'
 
 group :development, :test do
   gem 'pry-rails'
