@@ -251,17 +251,12 @@ Devise.setup do |config|
     scope: 'email',
     image_size: 'square',
     info_fields: 'name,email',
-    callback_url: ENV['facebook_callback_url']
-    #callback_url: '/users/auth/facebook/callback'
   }
 
   config.omniauth :google_oauth2, ENV['google_client_id'], ENV['google_client_secret'], {
-    name: 'google',
     image_aspect_ratio: 'square',
     image_size: 50,
     prompt: 'select_account',
-    callback_url: ENV['google_callback_url']
-    #callback_url: '/users/auth/google/callback'
   }
 
   # ==> Warden configuration
