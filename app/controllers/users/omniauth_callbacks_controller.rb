@@ -20,14 +20,25 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # end
 
   def facebook
-    binding.pry
+    oauth_sign_in("facebook")
   end
 
   def google_oauth2
-
+    oauth_sign_in('google_oauth2')
   end
 
   protected
+
+  def oauth_sign_in(strategy)
+    @user = User.from_omniauth(request.env['omniauth.auth'])
+
+    if @user.persisted?
+      sign_in_and_redirect @user
+    elsif
+      session["devise.#{strategy}_data"] = request.env['omniauth.auth']
+      redirect_to new_user_registration_url(omniauth_strategy: strategy)
+    end
+  end
 
   # The path used when OmniAuth fails
   def after_omniauth_failure_path_for(scope)
