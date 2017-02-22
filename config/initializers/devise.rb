@@ -255,7 +255,7 @@ Devise.setup do |config|
     #callback_url: '/users/auth/facebook/callback'
   }
 
-  config.omniauth :google_oauth2, "APP_ID", "APP_SECRET", {
+  config.omniauth :google_oauth2, ENV['google_client_id'], ENV['google_client_secret'], {
     name: 'google',
     image_aspect_ratio: 'square',
     image_size: 50,
