@@ -25,3 +25,14 @@
               or
           %li
             = button_tag 'Register', type: 'button', class: 'btn btn-default navbar-btn'
+
+:javascript
+
+  $('#user-sign-out-btn').click(function(e){
+    $.post(
+      "#{destroy_user_session_path}",
+      {
+        "_method":"delete"
+      }
+    );
+  });

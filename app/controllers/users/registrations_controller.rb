@@ -4,6 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
+    binding.pry
     build_resource(new_registration_params)
     yield resource if block_given?
     respond_with resource

@@ -34,7 +34,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if @user.persisted?
       sign_in_and_redirect @user
-    elsif
+    else
       session["devise.#{strategy}_data"] = request.env['omniauth.auth']
       redirect_to new_user_registration_url(omniauth_strategy: strategy)
     end
