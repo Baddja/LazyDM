@@ -1,5 +1,5 @@
 # Heroku settings
-ruby '2.3.3'
+ruby '2.4.0'
 
 source 'https://rubygems.org'
 
